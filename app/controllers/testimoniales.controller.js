@@ -22,7 +22,10 @@ export default class TestimonialesController {
         return new Promise(async (resolve, reject) => {
             try {
                 const listadoTestimoniales = await TestimonialesModel.findAll({
-                    ...options
+                    ...options,
+                    order: [
+                        ['id', 'DESC']
+                    ]
                 });
 
                 resolve(listadoTestimoniales);
