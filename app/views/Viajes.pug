@@ -1,0 +1,6 @@
+extends ./MasterLayout
+include ./mixins/ListadoViajes
+block content
+    main.container.mt-5
+        h1.text-center #{nombrePagina}
+        +ListadoViajes(listadoViajes)

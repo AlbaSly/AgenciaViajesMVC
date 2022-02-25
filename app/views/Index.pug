@@ -1,0 +1,21 @@
+extends ./MasterLayout
+include ./mixins/ListadoViajes
+include ./mixins/ListadoTestimoniales
+
+block slider
+    .slider
+        h1 Río de Janeiro
+        em aventura
+block content
+    main.container.mt-5
+        h2.text-center.mb-5 Sobre Nosotros
+        .row.mb-5
+            .col-md-6
+                p Vestibulum blandit nisl dignissim pulvinar dignissim. Vivamus odio augue, pretium quis justo non, tincidunt bibendum turpis. Suspendisse potenti. In sit amet dolor sed diam euismod consectetur in quis erat. Donec sollicitudin suscipit nibh eu venenatis. Duis sagittis arcu efficitur libero imperdiet, ut bibendum nulla sollicitudin. In velit dui, consectetur eget magna id, fermentum tincidunt velit. Duis imperdiet, arcu sit amet accumsan lacinia, nisl elit facilisis mauris, in sodales felis leo eu massa. Aenean finibus a libero vel hendrerit.
+            .col-md-6
+                img(src="/img/inicio_nosotros.jpg" alt="Travel Image" class="img-fluid")
+        +ListadoViajes(listadoViajes)
+    include ./partials/Descuento
+    .container
+        h1.mt-5.text-center Testimoniales
+        +ListadoTestimoniales(listadoTestimoniales)
