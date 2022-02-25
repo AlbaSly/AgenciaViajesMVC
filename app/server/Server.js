@@ -76,8 +76,8 @@ export class Server {
         const routes = new Routes();
     }
     InitializeServer() {
-        const PORT = process.env.APP_PORT || 3200;
-        const HOST = process.env.APP_HOST || 'localhost';
+        const PORT = process.env.PORT || 3200;
+        const HOST = process.env.HOST || '0.0.0.0';
 
         WEB_SERVER.listen(PORT, HOST, () => {
             console.log(`SERVIDOR CONECTADO: ${HOST}:${PORT}`);
