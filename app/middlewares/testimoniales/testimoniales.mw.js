@@ -6,18 +6,21 @@ export function CrearTestimonio(req, res) {
     const testimonio = req.body;
 
     const {errors} = validationResult(req);
-
-    if (errors.length) {
-        res.render('Testimoniales', {
-            errors,
-            nombre: req.body.nombre,
-            mensaje: req.body.mensaje
-        });
-        return;
-    } 
-
+    
     (async () => {
         try {
+            if (errors.length) {
+                const listadoTestimoniales = await new TestimonialesController().ListadoTestimoniales();
+                
+                res.render('Testimoniales', {
+                    errors,
+                    nombre: req.body.nombre,
+                    mensaje: req.body.mensaje,
+                    listadoTestimoniales
+                });
+                return;
+            } 
+
             await testimonioController.CrearTestimonio(testimonio);
             
             res.redirect('/testimoniales');
