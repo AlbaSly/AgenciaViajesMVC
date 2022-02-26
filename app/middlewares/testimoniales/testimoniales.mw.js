@@ -10,7 +10,7 @@ export function CrearTestimonio(req, res) {
     (async () => {
         try {
             if (errors.length) {
-                const listadoTestimoniales = await new TestimonialesController().ListadoTestimoniales();
+                const listadoTestimoniales = await testimonioController.ListadoTestimoniales();
                 
                 res.render('Testimoniales', {
                     errors,
